@@ -1,6 +1,6 @@
 {
   "name": "meanie-angular-http-buffer",
-  "description": "",
+  "description": "A Http Buffer service for Meanie projects",
   "version": "0.0.1",
   "homepage": "https://github.com/meanie/",
   "author": {
@@ -19,10 +19,13 @@
   },
   "keywords": [
     "meanie",
-    "meanie-module"
+    "meanie-module",
+    "http",
+    "buffer"
   ],
   "files": [
-    "src"
+    "src",
+    "meanie.json"
   ],
   "scripts": {
     "jshint": "./node_modules/jshint/bin/jshint --reporter=node_modules/jshint-stylish . || true",
