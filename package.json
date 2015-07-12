@@ -1,7 +1,7 @@
 {
   "name": "meanie-angular-http-buffer",
   "description": "A Http Buffer service for Meanie projects",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homepage": "https://github.com/meanie/",
   "author": {
     "name": "Adam Buczynski",

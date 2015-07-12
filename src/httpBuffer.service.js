@@ -7,7 +7,7 @@ angular.module('Utility.HttpBuffer.Service', [])
 /**
  * Service definition
  */
-.factory('HttpBuffer', function($injector) {
+.factory('$httpBuffer', function($q, $injector) {
 
   //Requests buffer
   var buffer = [];
@@ -34,16 +34,18 @@ angular.module('Utility.HttpBuffer.Service', [])
   /**
    * Service class
    */
-  var HttpBuffer = {
+  return {
 
     /**
-     * Append a new request
+     * Store a new request in the buffer
      */
-    append: function(config, deferred) {
+    store: function(config) {
+      var deferred = $q.defer();
       buffer.push({
         config: config,
         deferred: deferred
       });
+      return deferred.promise;
     },
 
     /**
@@ -64,7 +66,7 @@ angular.module('Utility.HttpBuffer.Service', [])
       }
 
       //Clear the buffer
-      HttpBuffer.clear();
+      this.clear();
     },
 
     /**
@@ -85,10 +87,7 @@ angular.module('Utility.HttpBuffer.Service', [])
       }
 
       //Clear the buffer
-      HttpBuffer.clear();
+      this.clear();
     }
   };
-
-  //Return it
-  return HttpBuffer;
 });

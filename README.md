@@ -17,7 +17,53 @@ meanie install angular-http-buffer
 ```
 
 ## Usage
-...
+Buffer failed requests in a http interceptor:
+```js
+
+//Module dependencies
+angular.module('App.MyModule', [
+  'Utility.HttpBuffer.Service'
+])
+
+//Config
+.config(function($httpProvider) {
+  $httpProvider.interceptors.push('Buffered401Interceptor');
+})
+
+//Interceptor factory
+.factory('Buffered401Interceptor', function($q, $rootScope, $httpBuffer) {
+  return {
+    responseError: function(response) {
+
+      //Intercept 401's
+      if (response.status === 401 && !response.config.ignore401intercept) {
+        var promise = $httpBuffer.store(response.config);
+        $rootScope.$broadcast('auth.401', response);
+        return promise;
+      }
+
+      //Return rejection
+      return $q.reject(response);
+    }
+  };
+});
+```
+Then later retry or reject them:
+```javascript
+$rootScope.on('auth.401', function(event, response) {
+
+  //Use an Auth service to login again
+  Auth.doLogin().then(function() {
+
+    //Retry all buffered requests
+    $httpBuffer.retryAll();
+  }, function() {
+
+    //Reject all buffered requests
+    $httpBuffer.rejectAll();
+  });
+});
+```
 
 ## Issues & feature requests
 Please report any bugs, issues, suggestions and feature requests in the appropriate issue tracker:
