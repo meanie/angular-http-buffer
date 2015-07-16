@@ -1,28 +1,67 @@
-# Meanie - Angular Http Buffer
+# meanie-angular-http-buffer
 
 [![npm version](https://img.shields.io/npm/v/meanie-angular-http-buffer.svg)](https://www.npmjs.com/package/meanie-angular-http-buffer)
 [![node dependencies](https://david-dm.org/meanie/angular-http-buffer.svg)](https://david-dm.org/meanie/angular-http-buffer)
 [![github issues](https://img.shields.io/github/issues/meanie/angular-http-buffer.svg)](https://github.com/meanie/angular-http-buffer/issues)
-<!--
-[![codacy](https://img.shields.io/codacy/abcdefgh.svg)](https://www.codacy.com/app/meanie/angular-http-buffer)
--->
+[![codacy](https://img.shields.io/codacy/1acac1b2744d4c42b21301ee6625d131.svg)](https://www.codacy.com/app/meanie/angular-http-buffer)
 [![Join the chat at https://gitter.im/meanie/meanie](https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg)](https://gitter.im/meanie/meanie?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-A Http Buffer service for [Meanie](https://github.com/meanie/meanie) projects.
+AngularJS module for buffering HTTP requests
 
 ## Installation
-Install using the [Meanie CLI](https://www.npmjs.com/package/meanie):
+
+You can install this package using `meanie`, `npm` or `bower`.
+
+### meanie
+
 ```shell
 meanie install angular-http-buffer
 ```
 
-## Usage
-Buffer failed requests in a http interceptor:
-```js
+Then add `HttpBuffer.Service` as a dependency for your app:
 
+```js
+angular.module('App.MyModule', ['HttpBuffer.Service']);
+```
+
+### npm
+
+```shell
+npm install meanie-angular-http-buffer
+```
+
+Then add as a dependency for your app:
+
+```js
+angular.module('App.MyModule', [require('meanie-angular-http-buffer')]);
+```
+
+### bower
+
+```shell
+bower install meanie-angular-http-buffer
+```
+
+Add a `<script>` to your `index.html`:
+
+```html
+<script src="/bower_components/meanie-angular-http-buffer/release/meanie-angular-http-buffer.js"></script>
+```
+
+Then add `HttpBuffer.Service` as a dependency for your app:
+
+```js
+angular.module('App.MyModule', ['HttpBuffer.Service']);
+```
+
+## Usage
+
+Buffer failed requests in a http interceptor:
+
+```js
 //Module dependencies
 angular.module('App.MyModule', [
-  'Utility.HttpBuffer.Service'
+  'HttpBuffer.Service'
 ])
 
 //Config
@@ -48,7 +87,9 @@ angular.module('App.MyModule', [
   };
 });
 ```
-Then later retry or reject them:
+
+Later retry or reject them:
+
 ```javascript
 $rootScope.on('auth.401', function(event, response) {
 
@@ -66,18 +107,21 @@ $rootScope.on('auth.401', function(event, response) {
 ```
 
 ## Issues & feature requests
-Please report any bugs, issues, suggestions and feature requests in the appropriate issue tracker:
-* [Angular Http Buffer issue tracker](https://github.com/meanie/angular-http-buffer/issues)
-* [Meanie Boilerplate issue tracker](https://github.com/meanie/boilerplate/issues)
-* [Meanie CLI issue tracker](https://github.com/meanie/meanie/issues)
+
+Please report any bugs, issues, suggestions and feature requests in the [meanie-angular-http-buffer issue tracker](https://github.com/meanie/angular-http-buffer/issues).
 
 ## Contributing
+
+Pull requests are welcome! Please create them against the [dev branch](https://github.com/meanie/angular-http-buffer/tree/dev) of the repository.
+
 If you would like to contribute to Meanie, please check out the [Meanie contributing guidelines](https://github.com/meanie/meanie/blob/master/CONTRIBUTING.md).
 
 ## Credits
+
 Based on the Http Buffer service from Witold Szczerba in his [angular-http-auth](https://github.com/witoldsz/angular-http-auth) module.
 
 ## License
+
 (MIT License)
 
 Copyright 2015, [Adam Buczynski](http://adambuczynski.com)

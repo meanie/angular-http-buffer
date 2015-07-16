@@ -1,5 +1,5 @@
 {
-  "cliVersion": "0.5.0",
-  "destination": "client/common/utility/httpBuffer",
+  "cliVersion": "0.6.0",
+  "destination": "client/vendor/meanie-angular-http-buffer",
   "instructions": "https://github.com/meanie/angular-http-buffer#usage"
 }
