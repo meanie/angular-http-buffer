@@ -2,7 +2,7 @@
 /**
  * Module definition and dependencies
  */
-angular.module('Utility.HttpBuffer.Service', [])
+angular.module('HttpBuffer.Service', [])
 
 /**
  * Service definition

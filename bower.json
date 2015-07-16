@@ -1,0 +1,15 @@
+{
+  "name": "meanie-angular-http-buffer",
+  "version": "0.2.0",
+  "main": "./release/meanie-angular-http-buffer.js",
+  "ignore": [
+    "**/.*",
+    "gulpfile.js",
+    "karma.conf.js",
+    "src",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.4.3"
+  }
+}
