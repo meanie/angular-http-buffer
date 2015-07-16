@@ -1,5 +1,6 @@
 {
   "cliVersion": "0.6.0",
+  "packageType": "vendor",
   "destination": "client/vendor/meanie-angular-http-buffer",
   "instructions": "https://github.com/meanie/angular-http-buffer#usage"
 }
