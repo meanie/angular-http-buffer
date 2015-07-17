@@ -15,7 +15,7 @@ angular.module('HttpBuffer.Service', [])
 /**
  * Service definition
  */
-.factory('$httpBuffer', ["$q", "$injector", function($q, $injector) {
+.factory('$httpBuffer', ['$q', '$injector', function($q, $injector) {
 
   //Requests buffer
   var buffer = [];
