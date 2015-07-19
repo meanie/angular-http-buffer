@@ -17,6 +17,8 @@
   "bugs": {
     "url": "https://github.com/meanie/angular-http-buffer/issues"
   },
+  "packageType": "front-end",
+  "instructions": "https://github.com/meanie/angular-http-buffer#usage",
   "keywords": [
     "meanie",
     "meanie-module",
@@ -27,8 +29,7 @@
   "files": [
     "release",
     "index.js",
-    "bower.json",
-    "meanie.json"
+    "bower.json"
   ],
   "scripts": {
     "pretest": "gulp lint",
