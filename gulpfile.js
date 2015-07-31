@@ -54,7 +54,7 @@ function packageFileName(filename, ext) {
  */
 function angularWrapper() {
   return {
-    header: '(function (window, angular, undefined) {\'use strict\';\n',
+    header: '(function(window, angular, undefined) {\'use strict\';\n',
     footer: '\n})(window, window.angular);\n'
   };
 }
@@ -63,6 +63,9 @@ function angularWrapper() {
  * Generate banner wrapper for compiled files
  */
 function bannerWrapper() {
+
+  //Refresh package JSON
+  packageJson();
 
   //Get date and author
   var today = new Date();
@@ -103,7 +106,7 @@ function clean(done) {
 function release() {
   var jsFilter = filter(['*.js']);
   return gulp.src([
-    'src/**/*.js',
+    'src/**/*.js'
   ]).pipe(ngAnnotate({
     single_quotes: true
   }))
@@ -213,7 +216,8 @@ function commitBump() {
   var version = packageJson().version;
   return gulp.src([
     './package.json',
-    './bower.json'
+    './bower.json',
+    './release/*'
   ]).pipe(git.commit('Bump version to ' + version));
 }
 
@@ -254,13 +258,13 @@ gulp.task('watch', watch);
  * Bump version numbers
  */
 gulp.task('patch', gulp.series(
-  patchBump, commitBump, tagBump
+  patchBump, release, commitBump, tagBump
 ));
 gulp.task('minor', gulp.series(
-  minorBump, commitBump, tagBump
+  minorBump, release, commitBump, tagBump
 ));
 gulp.task('major', gulp.series(
-  majorBump, commitBump, tagBump
+  majorBump, release, commitBump, tagBump
 ));
 
 /**

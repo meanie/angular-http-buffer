@@ -1,6 +1,6 @@
 {
   "name": "meanie-angular-http-buffer",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "./release/meanie-angular-http-buffer.js",
   "ignore": [
     "**/.*",
