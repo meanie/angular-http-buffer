@@ -1,7 +1,7 @@
 {
   "name": "meanie-angular-http-buffer",
   "description": "AngularJS module for buffering HTTP requests",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "homepage": "https://github.com/meanie/angular-http-buffer",
   "author": {
     "name": "Adam Buczynski",
