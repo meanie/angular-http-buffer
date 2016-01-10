@@ -6,35 +6,25 @@
 [![codacy](https://img.shields.io/codacy/1acac1b2744d4c42b21301ee6625d131.svg)](https://www.codacy.com/app/meanie/angular-http-buffer)
 [![Join the chat at https://gitter.im/meanie/meanie](https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg)](https://gitter.im/meanie/meanie?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-AngularJS module for buffering HTTP requests
+An Angular service for buffering HTTP requests
 
 ## Installation
 
-You can install this package using `meanie`, `npm` or `bower`.
-
-### meanie
-
-```shell
-meanie install angular-http-buffer
-```
-
-Then add `HttpBuffer.Service` as a dependency for your app:
-
-```js
-angular.module('App.MyModule', ['HttpBuffer.Service']);
-```
+You can install this package using `npm` or `bower`.
 
 ### npm
 
 ```shell
-npm install meanie-angular-http-buffer
+npm install meanie-angular-http-buffer --save
 ```
 
-Then add as a dependency for your app:
+Include the script `node_modules/meanie-angular-http-buffer/release/meanie-angular-http-buffer.js` in your build process, or add it via a `<script>` tag to your `index.html`:
 
-```js
-angular.module('App.MyModule', [require('meanie-angular-http-buffer')]);
+```html
+<script src="node_modules/meanie-angular-http-buffer/release/meanie-angular-http-buffer.js"></script>
 ```
+
+Add `HttpBuffer.Service` as a dependency for your app.
 
 ### bower
 
@@ -42,17 +32,13 @@ angular.module('App.MyModule', [require('meanie-angular-http-buffer')]);
 bower install meanie-angular-http-buffer
 ```
 
-Add a `<script>` to your `index.html`:
+Include the script `bower_components/meanie-angular-http-buffer/release/meanie-angular-http-buffer.js` in your build process, or add it via a `<script>` tag to your `index.html`:
 
 ```html
-<script src="/bower_components/meanie-angular-http-buffer/release/meanie-angular-http-buffer.js"></script>
+<script src="bower_components/meanie-angular-http-buffer/release/meanie-angular-http-buffer.js"></script>
 ```
 
-Then add `HttpBuffer.Service` as a dependency for your app:
-
-```js
-angular.module('App.MyModule', ['HttpBuffer.Service']);
-```
+Add `HttpBuffer.Service` as a dependency for your app.
 
 ## Usage
 
@@ -124,4 +110,4 @@ Based on the Http Buffer service from Witold Szczerba in his [angular-http-auth]
 
 (MIT License)
 
-Copyright 2015, [Adam Buczynski](http://adambuczynski.com)
+Copyright 2015-2016, [Adam Buczynski](http://adambuczynski.com)
