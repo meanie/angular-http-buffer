@@ -38,7 +38,7 @@
     "pretest": "npm run lint",
     "test": "karma start karma.conf.js",
     "version": "gulp release && git add release/*",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags && npm publish"
   },
   "devDependencies": {
     "angular": "^1.4.8",
