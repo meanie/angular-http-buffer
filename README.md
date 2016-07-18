@@ -12,9 +12,7 @@ An Angular service for buffering HTTP requests
 
 ## Installation
 
-You can install this package using `npm` or `bower`.
-
-### npm
+You can install this package using `npm`:
 
 ```shell
 npm install meanie-angular-http-buffer --save
@@ -24,20 +22,6 @@ Include the script `node_modules/meanie-angular-http-buffer/release/meanie-angul
 
 ```html
 <script src="node_modules/meanie-angular-http-buffer/release/meanie-angular-http-buffer.js"></script>
-```
-
-Add `HttpBuffer.Service` as a dependency for your app.
-
-### bower
-
-```shell
-bower install meanie-angular-http-buffer
-```
-
-Include the script `bower_components/meanie-angular-http-buffer/release/meanie-angular-http-buffer.js` in your build process, or add it via a `<script>` tag to your `index.html`:
-
-```html
-<script src="bower_components/meanie-angular-http-buffer/release/meanie-angular-http-buffer.js"></script>
 ```
 
 Add `HttpBuffer.Service` as a dependency for your app.
