@@ -30,7 +30,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint . --fix",
-    "version": "gulp release && git add release/*",
+    "release": "gulp release",
+    "version": "npm run release && git add release/*",
     "postversion": "git push && git push --tags && npm publish"
   },
   "devDependencies": {
