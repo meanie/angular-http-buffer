@@ -1,5 +1,5 @@
 /**
- * meanie-angular-http-buffer - v1.1.1 - 18-6-2016
+ * meanie-angular-http-buffer - v1.1.2 - 18-6-2016
  * https://github.com/meanie/angular-http-buffer
  *
  * Copyright (c) 2016 Adam Buczynski <me@adambuczynski.com>
