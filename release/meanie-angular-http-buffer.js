@@ -1,7 +1,7 @@
 /**
  * meanie-angular-http-buffer * https://github.com/meanie/angular-http-buffer
  *
- * Copyright (c) 2016 Adam Buczynski <me@adambuczynski.com>
+ * Copyright (c) 2016 Adam Reis <adam@reis.nz>
  * License: MIT
  */
 (function (window, angular, undefined) {
