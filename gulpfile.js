@@ -3,20 +3,21 @@
 /**
  * Dependencies
  */
-var fs = require('fs');
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var filter = require('gulp-filter');
-var wrapper = require('gulp-wrapper');
-var sourcemaps = require('gulp-sourcemaps');
-var ngAnnotate = require('gulp-ng-annotate');
+const fs = require('fs');
+const gulp = require('gulp');
+const babel = require('gulp-babel');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
+const filter = require('gulp-filter');
+const wrapper = require('gulp-wrapper');
+const sourcemaps = require('gulp-sourcemaps');
+const ngAnnotate = require('gulp-ng-annotate');
 
 /**
  * Package and configuration
  */
-var pkg = require('./package.json');
+let pkg = require('./package.json');
 
 /*****************************************************************************
  * Helpers
@@ -35,7 +36,7 @@ function packageJson() {
 function packageFileName(filename, ext) {
   if (!ext) {
     ext = filename;
-    filename = pkg.name.toLowerCase();
+    filename = pkg.name.replace('@meanie/', '');
   }
   return filename + (ext || '');
 }
@@ -46,7 +47,7 @@ function packageFileName(filename, ext) {
 function angularWrapper() {
   return {
     header: '(function(window, angular, undefined) {\'use strict\';\n',
-    footer: '\n})(window, window.angular);\n'
+    footer: '\n})(window, window.angular);\n',
   };
 }
 
@@ -59,14 +60,13 @@ function bannerWrapper() {
   packageJson();
 
   //Get date and author
-  var today = new Date();
-  var date = today.getDate() + '-' + today.getMonth() + '-' + today.getFullYear();
-  var author = pkg.author.name + ' <' + pkg.author.email + '>';
+  const today = new Date();
+  const author = pkg.author.name + ' <' + pkg.author.email + '>';
 
   //Format banner
-  var banner =
+  const banner =
     '/**\n' +
-    ' * ' + pkg.name + ' - v' + pkg.version + ' - ' + date + '\n' +
+    ' * ' + pkg.name +
     ' * ' + pkg.homepage + '\n' +
     ' *\n' +
     ' * Copyright (c) ' + today.getFullYear() + ' ' + author + '\n' +
@@ -76,7 +76,7 @@ function bannerWrapper() {
   //Return wrapper
   return {
     header: banner,
-    footer: ''
+    footer: '',
   };
 }
 
@@ -88,16 +88,20 @@ function bannerWrapper() {
  * Build release files
  */
 function release() {
-  var jsFilter = filter(['*.js'], {
-    restore: true
+  const jsFilter = filter(['*.js'], {
+    restore: true,
   });
   return gulp.src([
-    'src/**/*.js'
-  ]).pipe(ngAnnotate({
-    single_quotes: true
-  }))
+    'src/**/*.js',
+  ])
     .pipe(wrapper(angularWrapper()))
     .pipe(sourcemaps.init())
+      .pipe(babel({
+        compact: false,
+      }))
+      .pipe(ngAnnotate({
+        single_quotes: true,
+      }))
       .pipe(concat(packageFileName('.js')))
       .pipe(wrapper(bannerWrapper()))
       .pipe(gulp.dest('release'))

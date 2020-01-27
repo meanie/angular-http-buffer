@@ -1,7 +1,7 @@
 {
-  "name": "meanie-angular-http-buffer",
+  "name": "@meanie/angular-http-buffer",
   "description": "An Angular service for buffering HTTP requests",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "homepage": "https://github.com/meanie/angular-http-buffer",
   "author": {
     "name": "Adam Reis",
@@ -9,6 +9,9 @@
   },
   "contributors": [],
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/meanie/angular-http-buffer"
@@ -16,50 +19,33 @@
   "bugs": {
     "url": "https://github.com/meanie/angular-http-buffer/issues"
   },
-  "packageType": "front-end",
-  "instructions": "https://github.com/meanie/angular-http-buffer#usage",
+  "instructions": {
+    "url": "https://github.com/meanie/angular-http-buffer#usage"
+  },
   "keywords": [
     "meanie",
-    "meanie-module",
+    "angular",
+    "angularjs",
     "http",
     "buffer"
   ],
   "main": "index.js",
-  "files": [
-    "release",
-    "index.js",
-    "bower.json"
-  ],
   "scripts": {
-    "lint": "npm run lint:jshint && npm run lint:jscs",
-    "lint:jshint": "jshint . --reporter=node_modules/jshint-stylish",
-    "lint:jscs": "jscs . --reporter=node_modules/jscs-stylish",
-    "pretest": "npm run lint",
-    "test": "karma start karma.conf.js",
-    "version": "gulp release && git add release/*",
+    "release": "gulp release",
+    "version": "yarn release && git add release/*",
     "postversion": "git push && git push --tags && npm publish"
   },
   "devDependencies": {
-    "angular": "^1.5.0",
-    "angular-mocks": "^1.5.0",
-    "gulp": "gulpjs/gulp#4.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-filter": "^3.0.1",
-    "gulp-ng-annotate": "^1.1.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015-without-strict": "^0.0.4",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-filter": "^5.0.1",
+    "gulp-ng-annotate": "^2.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.5.2",
-    "gulp-wrapper": "^1.0.0",
-    "jasmine-core": "^2.4.1",
-    "jasmine-spec-reporter": "^2.4.0",
-    "jscs": "^2.9.0",
-    "jscs-stylish": "^0.3.1",
-    "jshint": "^2.9.1",
-    "jshint-stylish": "^2.1.0",
-    "karma": "^0.13.19",
-    "karma-jasmine": "^0.3.7",
-    "karma-phantomjs-launcher": "^1.0.0",
-    "karma-spec-reporter": "^0.0.23",
-    "phantomjs-prebuilt": "^2.1.4"
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-wrapper": "^1.0.0"
   }
 }
