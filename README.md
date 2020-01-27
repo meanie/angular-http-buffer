@@ -105,10 +105,13 @@ Pull requests are welcome! If you would like to contribute to Meanie, please che
 ## Credits
 
 * Based on the Http Buffer service from Witold Szczerba in his [angular-http-auth](https://github.com/witoldsz/angular-http-auth) module.
-* Meanie logo designed by [Quan-Lin Sim](mailto:quan.lin.sim+meanie@gmail.com)
+
+## Sponsor
+
+This package has been kindly sponsored by [Hello Club](https://helloclub.com?source=meanie), an [all in one club and membership management solution](https://helloclub.com?source=meanie) complete with booking system, automated membership renewals, online payments and integrated access and light control. Check us out if you happen to belong to any kind of club or if you know someone who helps run a club!
 
 ## License
 
 (MIT License)
 
-Copyright 2015-2016, [Adam Buczynski](http://adambuczynski.com)
+Copyright 2015-2020, Adam Reis
